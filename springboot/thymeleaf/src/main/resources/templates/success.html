@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1>Success!</h1>
+    <!--th:text="${hello}" 将div里面文本内容设置为${hello} 会替换掉div里的文本内容great-->
+    <!-- th:id  th:class 也会替换原有的 id  class-->
+    <div id="div01" class="myDiv" th:id="${hello}" th:class="${hello}" th:text="${hello}">great</div>
+    <hr/>
+
+    <!--th:text会转义特殊字符 这里输出<h1>good</h1>-->
+    <div th:text="${hello}"></div>
+    <hr/>
+    <!--th:utext 不会转义特殊字符 这里输出good-->
+    <div th:utext="${hello}"></div>
+    <hr/>
+
+    <!-- th:each 每次遍历都会生成当前这个标签: 3个h4-->
+    <h4 th:text="${user}" th:each="user:${users}"></h4>
+    <hr/>
+
+    <!--这样遍历会生成1个h4带3个span；-->
+    <!--文本内容变量如果要写在标签里可以用[[${user}]] 相当于 th:text="${user}"-->
+    <h4>
+    <span th:each="user:${users}"> [[${user}]]</span>
+    </h4>
+</body>
+</html>
+

@@ -1,0 +1,11 @@
+0:0:0:0:0:0:0:1 - - [01/Jul/2018:17:32:15 +0800] "GET /home HTTP/1.1" 404 959 http-bio-8080-exec-2 41
+0:0:0:0:0:0:0:1 - - [01/Jul/2018:17:32:33 +0800] "GET /home HTTP/1.1" 404 959 http-bio-8080-exec-4 5
+0:0:0:0:0:0:0:1 - - [01/Jul/2018:17:32:33 +0800] "GET /favicon.ico HTTP/1.1" 404 973 http-bio-8080-exec-6 2
+0:0:0:0:0:0:0:1 - - [01/Jul/2018:17:32:52 +0800] "GET /courses HTTP/1.1" 404 965 http-bio-8080-exec-7 1
+0:0:0:0:0:0:0:1 - - [01/Jul/2018:17:33:03 +0800] "GET / HTTP/1.1" 200 62 http-bio-8080-exec-7 38
+0:0:0:0:0:0:0:1 - - [01/Jul/2018:17:33:27 +0800] "GET /courses HTTP/1.1" 404 965 http-bio-8080-exec-4 2
+0:0:0:0:0:0:0:1 - - [01/Jul/2018:17:33:50 +0800] "GET /courses/view2/123 HTTP/1.1" 200 4042 http-bio-8080-exec-4 63
+0:0:0:0:0:0:0:1 - - [01/Jul/2018:17:33:50 +0800] "GET /resources/css/main.css HTTP/1.1" 200 39700 http-bio-8080-exec-4 3
+0:0:0:0:0:0:0:1 - - [01/Jul/2018:17:33:50 +0800] "GET /resources/imgs/course-img.jpg HTTP/1.1" 200 41414 http-bio-8080-exec-10 2
+0:0:0:0:0:0:0:1 - - [01/Jul/2018:17:33:50 +0800] "GET /resources/img/course_info_sprit.png HTTP/1.1" 404 1021 http-bio-8080-exec-10 5
+0:0:0:0:0:0:0:1 - - [01/Jul/2018:17:33:57 +0800] "GET /resources/img/course_info_sprit.png HTTP/1.1" 404 1021 http-bio-8080-exec-10 2

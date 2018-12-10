@@ -1,0 +1,75 @@
+spring:
+  datasource:
+#   数据源基本配置 系统里存在
+    username: root
+    password: 1234Symbiosymbio
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/company?useUnicode=true&characterEncoding=UTF-8&useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+#   数据源其他配置  如果下面属性是黄色那就说明系统里不存在需要配置 在数据库连接池配置里面绑定就可以使用了
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+#   配置监控统计拦截的filters，去掉后监控界面sql无法统计，'wall'用于防火墙
+    filters: stat,wall,log4j
+    maxPoolPreparedStatementPerConnectionSize: 20
+    useGlobalDataSourceStat: true
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+
+  #配置Redis
+  redis:
+    host: 127.0.0.1
+    port: 6666
+
+  #禁用模板引擎的缓存
+  thymeleaf:
+    cache: false
+
+
+  #国际化配置文件（包名.基础名)
+  messages:
+    basename: i18n.login
+
+
+
+
+
+#配置使Mybatis xml配置文件生效
+mybatis:
+#  Mybatis全局配置文件
+  config-location: classpath:mybatis/mybatis-Config.xml
+#  Mybatis映射文件
+  mapper-locations: classpath:mybatis/mapper/*.xml
+
+#开启驼峰命名
+#  configuration:
+#    map-underscore-to-camel-case: true
+
+#打印sql语句
+#logging:
+#  level:
+#    com.demo.mapper: debug
+
+#打印自动配置报告
+#debug: true
+
+#添加项目访问路径：localhost:8080/crud  和其他配置
+#server:
+#  context-path: /crud
+#  port: 8081
+#  tomcat:
+#    uri-encoding: UTF-8
+
+
+#    配置自动导入数据库表  把resources/sql文件夹下的sql文件导入数据库   执行一次之后要注释掉
+#    schema:
+#      - classpath:sql/department.sql
+#      - classpath:sql/employee.sql

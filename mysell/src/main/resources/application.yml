@@ -1,0 +1,19 @@
+#设置数据库驱动spring:
+spring:
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: 9025476
+    url: jdbc:mysql://localhost:3306/mysell?useUnicode=true&characterEncoding=utf8&useSSL=false
+
+  #配置让数据库语句打印出来，在开发状态下比较有用
+  jpa:
+    show-sql: true
+
+wechat:
+    mpAppId: wxa57d0d99cdcd77c5
+    mpAppSecret: 74edac6d4f9a1f0a03246c17a85ec6ae
+    mchId:
+    mchKey:
+    mchPath:
+

@@ -1,0 +1,10 @@
+spring:
+
+
+
+#\u914D\u7F6ESpringData \u64CD\u4F5CElasticSearch\u6A21\u5757  \u8981\u53BB\u865A\u62DF\u673Adocker\u91CC\u5207\u6362es\u7248\u672C
+  data:
+    elasticsearch:
+      cluster-name: elasticsearchjest
+
+      cluster-nodes: http://10.211.55.5:9301

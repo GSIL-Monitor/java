@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--Mybatis映射配置文件-->
+<!--*要使Mybatis xml配置文件生效需要在yml配置文件里面做配置-->
+<!--namespace=要绑定mapper接口-->
+<mapper namespace="com.All.mybatis.mapper.EmployeeMapper">
+<!--把mapper接口里的两个方法配置到此映射文件里
+public Employee getEmpById(Integer id);
+public void insertEmp(Employee employee);-->
+
+    <!--查询用select id=就是方法名  resultType=查询的返回值类型（去复制Employee类的Reference  里面写数据库语句-->
+    <select id="getEmpById" resultType="com.All.entity.Employee">
+        SELECT * FROM employee WHERE id=#{id}
+    </select>
+
+    <insert id="insertEmp">
+        INSERT INTO employee(lastName,email,gender,d_id) VALUES (#{lastName},#{email},#{gender},#{dId})
+    </insert>
+
+    <update id="updateEmp">
+        update employee set lastName=#{lastName},email=#{email},gender=#{gender},d_id=#{dId} where id=#{id}
+    </update>
+
+    <delete id="deleteEmpById">
+        delete from employee where id=#{id}
+    </delete>
+
+
+    <select id="getEmpByLastName">
+        SELECT * FROM employee WHERE lastName = #{lastName}
+    </select>
+
+
+</mapper>

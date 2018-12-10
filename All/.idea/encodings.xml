@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/com/arraylistandhashset/Course.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/arraylistandhashset/ListTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/arraylistandhashset/SetTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/arraylistandhashset/Student.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/arraylistandhashset/TestGeneric.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/collection/CollectionsTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/collection/Course.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/collection/ListTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/collection/MapTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/collection/SetTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/collection/Student.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/collection/TestGeneric.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/listmapmore/CollectionsTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/listmapmore/Course.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/listmapmore/ListTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/listmapmore/MapTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/listmapmore/SetTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/listmapmore/Student.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/listmapmore/TestGeneric.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/map/Course.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/map/MapTest.java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/com/map/Student.java" charset="UTF-8" />
+  </component>
+</project>

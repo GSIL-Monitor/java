@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.AreaDao">
+	<!-- mapper文件 对应AreaDao接口 实现接口里的功能-->
+	<!-- id-queryArea功能   resultType-返回类型是Area类型 后面跟sql语句
+	ORDER BY priority 根据priority排序  DESC 降序-->
+	<select id="queryArea" resultType="com.entity.Area">
+		SELECT area_id, area_name,
+		priority, create_time, last_edit_time
+		FROM tb_area
+		ORDER BY priority
+		DESC
+	</select>
+	<select id="queryAreaById" resultType="com.entity.Area">
+		SELECT area_id, area_name,
+		priority, create_time, last_edit_time
+		FROM tb_area
+		WHERE
+		area_id=#{areaId}
+	</select>
+	<!-- useGeneratedKeys="true"-一旦insert成功 则返回一个主键的值 主键为"areaId"
+	keyColumn="area_id" 对应的是"area_id"这个column
+	parameterType="com.entity.Area"  传入的参数类型是Area类型 -->
+	<insert id="insertArea" useGeneratedKeys="true" keyProperty="areaId"
+		keyColumn="area_id" parameterType="com.entity.Area">
+		INSERT INTO
+		tb_area(area_name,priority,
+		create_time,last_edit_time)
+		VALUES <!-- ID会自动生成，其他的4个从传入的Area参数里面获取，后面跟着#{areaName}为实体类entity里面的名字-->
+		(#{areaName},#{priority},
+		#{createTime},#{lastEditTime})
+	</insert>
+	<update id="updateArea" parameterType="com.entity.Area">
+		update tb_area
+		<set>
+			<if test="areaName != null">area_name=#{areaName},</if>
+			<if test="priority != null">priority=#{priority},</if>
+			<if test="lastEditTime != null">last_edit_time=#{lastEditTime}</if>
+		</set>
+		where area_id=#{areaId}
+	</update>
+	<delete id="deleteArea">
+		DELETE FROM
+		tb_area
+		WHERE
+		area_id =
+		#{areaId}
+	</delete>
+</mapper>
+    

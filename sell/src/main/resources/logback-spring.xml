@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<configuration>
+
+    <!--appender为一个配置项；name是自己起的配置项名字；class="" 此配置项需要用到这个类去处理；-->
+    <!--配置控制台输出-->
+    <appender name="consoleLog" class="ch.qos.logback.core.ConsoleAppender">
+        <!-- layout展示形式配置，%d - %msg%n 为日志格式简化-->
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>
+                %d - %msg%n
+            </pattern>
+        </layout>
+    </appender>
+
+    <!--配置日志输出文件；RollingFileAppender滚动文件输出-->
+    <appender name="fileInfoLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--filter过滤；LevelFilter按照级别过滤， 进入到LevelFilter类里面可以查看有什么操作，
+        比如DENY，Accept，NEUTRAL。NEUTRAL为忽略这条规则-->
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <!--定义日志级别为ERROR-->
+            <level>ERROR</level>
+           <!-- onMatch如果匹配到ERROR就DENY禁止掉-->
+            <onMatch>DENY</onMatch>
+            <!-- 反之onMismatch如果没有匹配到就ACCEPT使用这条规则-->
+            <onMismatch>ACCEPT</onMismatch>
+        </filter>
+        <!--encoder，负责两件事，一是把日志信息转换成字节数组，二是把字节数组写入到输出流。指定输出格式为message-->
+        <encoder>
+            <pattern>
+                %msg%n
+            </pattern>
+        </encoder>
+        <!--rollingPolicy滚动策略；TimeBasedRollingPolicy 按照时间滚动，每天生成一个日志文件-->
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!--日志文件输出路径；%d在文件名里带上时间-->
+            <fileNamePattern>/var/log/tomcat/sell/info.%d.log</fileNamePattern>
+            <!--保存30天的日志文件-->
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+
+    <appender name="fileErrorLog" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <!--filter过滤；ThresholdFilter根据范围过滤，只输出...及以上级别的日志-->
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <!--定义日志级别为ERROR-->
+            <level>ERROR</level>
+        </filter>
+
+        <encoder>
+            <pattern>
+                %msg%n
+            </pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>/var/log/tomcat/sell/error.%d.log</fileNamePattern>
+        </rollingPolicy>
+    </appender>
+
+    <!--使用配置，设置配置项用在哪，这里设置为root，即整个项目都适用；level="info" 级别为info-->
+    <root level="info">
+        <!--ref里的值为上面配置项的名字 -->
+        <appender-ref ref="consoleLog" />
+        <appender-ref ref="fileInfoLog" />
+        <appender-ref ref="fileErrorLog" />
+    </root>
+
+</configuration>

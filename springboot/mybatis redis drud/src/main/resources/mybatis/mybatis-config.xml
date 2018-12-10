@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE configuration
+                PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+                "http://mybatis.org/dtd/mybatis-3-config.dtd">
+        <!--Mybatis全局配置文件-->
+        <!--*要使Mybatis xml配置文件生效需要在yml配置文件里面做配置-->
+<configuration>
+<settings>
+    <!--setting name=设置的项目名字去官方文档里面查
+    http://www.mybatis.org/mybatis-3/zh/configuration.html#settings
+    mapUnderscoreToCamelCasee为驼峰命名-->
+    <setting name="mapUnderscoreToCamelCase" value="true"/>
+</settings>
+</configuration>

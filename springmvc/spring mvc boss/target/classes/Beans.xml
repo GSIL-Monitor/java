@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+    <!-- 该 BeanPostProcessor 将自动起作用，对标注 @Autowired 的 Bean 进行自动注入 -->
+
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+
+    <!--<bean id="boss" class="com.example.controller.Boss">
+        <property name="message" value="Hello World!"/>
+    </bean>-->
+
+
+    <bean id="boss" class="com.example.controller.Boss">
+    </bean>
+
+    <bean id="speak" class="com.example.controller.Speak">
+    </bean>
+
+
+
+    </beans>
